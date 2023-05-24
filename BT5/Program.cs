@@ -9,10 +9,8 @@ namespace Ex5
         public static void Main(string[] args)
         {
             Console.WriteLine("Nhap ngay thang nam sinh: ");
-            int day = int.Parse(Console.ReadLine());
-            int month = int.Parse(Console.ReadLine());
-            int year = int.Parse(Console.ReadLine());
-            DateTime birthday = new DateTime(year, month, day);
+            
+            DateTime birthday = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
             DateTime today = DateTime.Today;
             DateTime nextBirthday = new DateTime(today.Year, birthday.Month, birthday.Day);
             if (nextBirthday < today)
